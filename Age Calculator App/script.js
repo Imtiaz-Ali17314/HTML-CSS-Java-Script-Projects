@@ -5,6 +5,7 @@ let result = document.querySelector(".result");
 let ageDetail = document.querySelector(".age-detail");
 
 function calculateAge() {
+  console.log(userInput.value);
   let birthDate = new Date(userInput.value);
 
   let d1 = birthDate.getDate();
@@ -47,17 +48,25 @@ function calculateAge() {
     y3--;
   }
 
-  result.innerHTML = `You are <span>${y3}</span> years , <span>${m3}</span> months and <span>${d3}</span> days old.`;
+  if (userInput.value != "") {
+    userInput.style.border = "none";
+    result.style.display = "block";
+    result.innerHTML = `You are <span>${y3}</span> years , <span>${m3}</span> months and <span>${d3}</span> days old.`;
 
-  const ageInYears = y3;
-  const ageInMonths = y3 * 12 + m3;
-  const ageInDays = y3 * 365 + d3;
-  const ageInHours = ageInDays * 24 + h;
-  const ageInMinutes = ageInHours * 60 + min;
-  const ageInSeconds = ageInMinutes * 60 + sec;
+    const ageInYears = y3;
+    const ageInMonths = y3 * 12 + m3;
+    const ageInDays = y3 * 365 + d3;
+    const ageInHours = ageInDays * 24 + h;
+    const ageInMinutes = ageInHours * 60 + min;
+    const ageInSeconds = ageInMinutes * 60 + sec;
 
-  ageDetail.style.display = "block";
-  ageDetail.innerHTML = `Your age in Years : <span>${ageInYears}</span>.<br>Your age in Months : <span>${ageInMonths}</span>.<br>Your age in Days : <span>${ageInDays}</span>.<br>Your age in Hours : <span>${ageInHours}</span>.<br>Your age in Minutes : <span>${ageInMinutes}</span>.<br>Your age in Seconds : <span>${ageInSeconds}</span>.`;
+    ageDetail.style.display = "block";
+    ageDetail.innerHTML = `Your age in Years : <span>${ageInYears}</span>.<br>Your age in Months : <span>${ageInMonths}</span>.<br>Your age in Days : <span>${ageInDays}</span>.<br>Your age in Hours : <span>${ageInHours}</span>.<br>Your age in Minutes : <span>${ageInMinutes}</span>.<br>Your age in Seconds : <span>${ageInSeconds}</span>.`;
+  } else {
+    userInput.style.border = "2px solid red";
+    result.style.display = "none";
+    ageDetail.style.display = "none";
+  }
 }
 
 function getDaysInMonth(year, month) {
