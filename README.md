@@ -42,7 +42,7 @@ Each folder typically contains:
 ## 🚀 Getting Started
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/Imtiaz-Ali17314/HTML-CSS-Java-Script-Projects.git
+   git clone https://github.com/imtiazaly/HTML-CSS-Java-Script-Projects.git
    cd HTML-CSS-Java-Script-Projects
    ```
 2. **Open a project** – navigate into any folder and double‑click `index.html` or run:
